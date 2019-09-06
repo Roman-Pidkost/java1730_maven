@@ -1,6 +1,8 @@
 package roman.pidkostelnyi.demo.entity;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
@@ -10,7 +12,7 @@ import java.util.List;
 @Setter
 
 @Entity
-public class Car {
+public class Country {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,17 +20,6 @@ public class Car {
 
     private String name;
 
-    private Long price;
-
-    private boolean abs;
-
-    @OneToOne
-    private Engine engine;
-
-    @ManyToOne
-    private Country countr123w21y;
-
-    @ManyToMany(mappedBy = "cars")
-    private List<User> users;
-
+    @OneToMany(mappedBy = "countr123w21y")
+    private List<Car> cars;
 }
