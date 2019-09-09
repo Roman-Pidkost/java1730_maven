@@ -5,9 +5,11 @@ import lombok.*;
 import javax.persistence.*;
 import java.util.List;
 
+@AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
 
 @Entity
 public class Car {
@@ -26,7 +28,7 @@ public class Car {
     private Engine engine;
 
     @ManyToOne
-    private Country countr123w21y;
+    private Country country;
 
     @ManyToMany(mappedBy = "cars")
     private List<User> users;

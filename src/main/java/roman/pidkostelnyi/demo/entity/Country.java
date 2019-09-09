@@ -20,6 +20,6 @@ public class Country {
 
     private String name;
 
-    @OneToMany(mappedBy = "countr123w21y")
+    @OneToMany(mappedBy = "country")
     private List<Car> cars;
 }
